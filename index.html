@@ -1,63 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Do Campo à Cidade</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Meu Site com Botões e Placar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+        }
+        #placar {
+            font-size: 40px;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Do Campo à Cidade</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Produtos</a></li>
-        <li><a href="#">Sobre Nós</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+    <h1>Meu Site com Botões e Placar</h1>
+    <button onclick="incrementarPlacar()">Adicionar 1 ponto</button>
+    <button onclick="zerarPlacar()">Zerar Placar</button>
+    <div id="placar">0</div>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <h2>Sabor Autêntico da Natureza</h2>
-        <p>Descubra os melhores produtos frescos diretamente do campo para a sua mesa.</p>
-        <a href="#" class="cta">Compre Agora</a>
-      </div>
-      <div class="hero-image">
-        <img src="campo-cidade.jpg" alt="Campo e cidade">
-      </div>
-    </section>
+    <script>
+        let pontos = 0;
 
-    <section class="featured-products">
-      <h2>Nossos Produtos Destacados</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="produto1.jpg" alt="Produto 1">
-          <h3>Produto 1</h3>
-          <p>Descrição do Produto 1</p>
-          <a href="#" class="buy-button">Comprar</a>
-        </div>
-        <div class="product-card">
-          <img src="produto2.jpg" alt="Produto 2">
-          <h3>Produto 2</h3>
-          <p>Descrição do Produto 2</p>
-          <a href="#" class="buy-button">Comprar</a>
-        </div>
-        <div class="product-card">
-          <img src="produto3.jpg" alt="Produto 3">
-          <h3>Produto 3</h3>
-          <p>Descrição do Produto 3</p>
-          <a href="#" class="buy-button">Comprar</a>
-        </div>
-      </div>
-    </section>
-  </main>
+        function incrementarPlacar() {
+            pontos++;
+            document.getElementById("placar").innerHTML = pontos;
+        }
 
-  <footer>
-    <p>&copy; 2023 Do Campo à Cidade. Todos os direitos reservados.</p>
-  </footer>
+        function zerarPlacar() {
+            pontos = 0;
+            document.getElementById("placar").innerHTML = pontos;
+        }
+    </script>
 </body>
 </html>
